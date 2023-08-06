@@ -7,19 +7,22 @@ class WorldTime {
   String flag; //the url to an asset flag icon
   String url; // location url for api endpoint
 
-  WorldTime({this.location, this.time, this.flag, this.url});
+  WorldTime(
+      {required this.location,
+      required this.time,
+      required this.flag,
+      required this.url});
 
-  void fetchData() async {
+  Future<void> getTime() async {
     //Requesting for data
     final response =
-        await get('http://worldtimeapi.org/api/timezone/$url' as Uri);
+        await get(Uri.parse('http://worldtimeapi.org/api/timezone/$url'));
     Map data = jsonDecode(response.body);
     // print(data);
 
     //Get data proerties
     String datetime = data['datetime'];
-    String offset = data['utc_offset'].subsrting(1, 3);
-    //String timezome = data['timezone'];
+    String offset = data['utc_offset'].substring(1, 3);
 
     // Create DateTime Object
     DateTime now = DateTime.parse(datetime);
@@ -29,5 +32,3 @@ class WorldTime {
     time = now.toString();
   }
 }
-
-WorldTime instance = WorldTime({location: 'Lagos' this: '', this.flag, this.url});
