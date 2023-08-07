@@ -28,6 +28,7 @@ class _LoadingState extends State<Loading> {
       flag: 'Berlin.png',
       url: 'Europe/Berlin',
       time: 'time',
+      isDaytime: true,
     );
     await instance.getTime();
     // ignore: use_build_context_synchronously
@@ -35,6 +36,7 @@ class _LoadingState extends State<Loading> {
       'location': instance.location,
       'flag': instance.flag,
       'time': instance.time,
+      'isDaytime': instance.isDaytime,
     });
     //   setState(() {
     //     time = instance.time;
