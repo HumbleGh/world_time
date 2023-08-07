@@ -16,16 +16,43 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            TextButton.icon(
-              onPressed: () {
-                Navigator.pushNamed(context, '/location');
-              },
-              label: const Text('Choose Location'),
-              icon: const Icon(Icons.edit_location),
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 120.0, 0, 0),
+          child: Column(
+            children: [
+              TextButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/location');
+                },
+                label: const Text('Choose Location'),
+                icon: const Icon(Icons.edit_location),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    data['location'],
+                    style: const TextStyle(
+                      fontSize: 28.0,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Text(
+                data['time'],
+                style: const TextStyle(
+                  fontSize: 66.0,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
