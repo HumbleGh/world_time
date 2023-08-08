@@ -6,8 +6,11 @@ class WorldTime {
   String location; //Location name for the UI
   String time; //the time in that location
   String flag; //the url to an asset flag icon
-  String url; // location url for api endpoint
-  bool isDaytime; // True or False for if it is daytime or not
+  String url;
+
+  // ignore: prefer_typing_uninitialized_variables
+  var isDaytime; // location url for api endpoint
+  // bool isDaytime; // True or False for if it is daytime or not
 
   WorldTime(
       {required this.location,
@@ -34,6 +37,7 @@ class WorldTime {
 
       // Set the time property
       isDaytime = now.hour > 6 && now.hour < 20 ? true : false;
+      // The code above is a tenary operator to find whether it is day or night
       time = DateFormat.jm().format(now);
     } catch (e) {
       time = 'Failed to load time data';
