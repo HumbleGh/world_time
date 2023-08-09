@@ -13,28 +13,42 @@ class _ChooseLocationState extends State<ChooseLocation> {
     WorldTime(
         location: 'Accra',
         time: 'time',
-        flag: 'gh.png',
+        flag: 'gh.jpg',
         isDaytime: 'isDaytime',
         url: 'Africa/Accra'),
     WorldTime(
-        location: 'Accra',
+        location: 'Lagos',
         time: 'time',
-        flag: 'gh.png',
+        flag: 'ng.jpg',
         isDaytime: 'isDaytime',
-        url: 'Africa/Accra'),
-    WorldTime(
-        location: 'Accra',
-        time: 'time',
-        flag: 'gh.png',
-        isDaytime: 'isDaytime',
-        url: 'Africa/Accra'),
-    WorldTime(
-        location: 'Accra',
-        time: 'time',
-        flag: 'gh.png',
-        isDaytime: 'isDaytime',
-        url: 'Africa/Accra'),
+        url: 'Africa/Lagos'),
+    // WorldTime(
+    //     location: 'Accra',
+    //     time: 'time',
+    //     flag: 'gh.png',
+    //     isDaytime: 'isDaytime',
+    //     url: 'Africa/Accra'),
+    // WorldTime(
+    //     location: 'Accra',
+    //     time: 'time',
+    //     flag: 'gh.png',
+    //     isDaytime: 'isDaytime',
+    //     url: 'Africa/Accra'),
   ];
+
+  void updateTime(index) async {
+    WorldTime instance = locations[index];
+    await instance.getTime();
+
+    // Navigate to the home screen
+    // ignore: use_build_context_synchronously
+    Navigator.pop(context, {
+      'location': instance.location,
+      'flag': instance.flag,
+      'time': instance.time,
+      'isDaytime': instance.isDaytime,
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +62,19 @@ class _ChooseLocationState extends State<ChooseLocation> {
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
-          return Card(
-            child: ListTile(
-              onTap: () {},
-              title: Text(locations[index].location),
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 4.0),
+            child: Card(
+              child: ListTile(
+                onTap: () {
+                  updateTime(index);
+                },
+                title: Text(locations[index].location),
+                leading: CircleAvatar(
+                  backgroundImage:
+                      AssetImage('assets/${locations[index].flag}'),
+                ),
+              ),
             ),
           );
         },
