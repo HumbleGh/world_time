@@ -22,18 +22,18 @@ class _ChooseLocationState extends State<ChooseLocation> {
         flag: 'ng.jpg',
         isDaytime: 'isDaytime',
         url: 'Africa/Lagos'),
+    WorldTime(
+        location: 'Cairo',
+        time: 'time',
+        flag: 'egypt.jpg',
+        isDaytime: 'isDaytime',
+        url: 'Africa/Cairo'),
     // WorldTime(
-    //     location: 'Accra',
+    //     location: 'Abuja',
     //     time: 'time',
-    //     flag: 'gh.png',
+    //     flag: 'us.jpg',
     //     isDaytime: 'isDaytime',
-    //     url: 'Africa/Accra'),
-    // WorldTime(
-    //     location: 'Accra',
-    //     time: 'time',
-    //     flag: 'gh.png',
-    //     isDaytime: 'isDaytime',
-    //     url: 'Africa/Accra'),
+    //     url: 'Africa/Abuja'),
   ];
 
   void updateTime(index) async {
