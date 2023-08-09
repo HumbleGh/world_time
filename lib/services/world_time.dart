@@ -36,7 +36,7 @@ class WorldTime {
       now = now.add(Duration(hours: int.parse(offset)));
 
       // Set the time property
-      isDaytime = now.hour > 6 && now.hour < 20 ? true : false;
+      isDaytime = now.hour > 1 && now.hour < 3 ? true : false;
       // The code above is a tenary operator to find whether it is day or night
       time = DateFormat.jm().format(now);
     } catch (e) {

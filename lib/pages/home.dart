@@ -18,7 +18,8 @@ class _HomeState extends State<Home> {
 
     // set background
     String bgImage = data['isDaytime'] ? 'day.jpg' : 'night.jpg';
-    Color bgColor = data['isDaytime'] ? Colors.blue : Colors.indigoAccent;
+    Color bgColor =
+        data['isDaytime'] ? Colors.blue : const Color.fromARGB(255, 1, 3, 17);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -46,8 +47,14 @@ class _HomeState extends State<Home> {
                       };
                     });
                   },
-                  label: const Text('Choose Location'),
-                  icon: const Icon(Icons.edit_location),
+                  label: const Text(
+                    'Choose Location',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  icon: const Icon(
+                    Icons.edit_location,
+                    color: Colors.white,
+                  ),
                 ),
                 const SizedBox(
                   height: 20.0,
@@ -58,9 +65,9 @@ class _HomeState extends State<Home> {
                     Text(
                       data['location'],
                       style: const TextStyle(
-                        fontSize: 28.0,
-                        letterSpacing: 2.0,
-                      ),
+                          fontSize: 28.0,
+                          letterSpacing: 2.0,
+                          color: Colors.white),
                     ),
                   ],
                 ),
@@ -71,6 +78,7 @@ class _HomeState extends State<Home> {
                   data['time'],
                   style: const TextStyle(
                     fontSize: 66.0,
+                    color: Colors.white,
                   ),
                 ),
               ],
