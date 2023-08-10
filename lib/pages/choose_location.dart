@@ -10,30 +10,69 @@ class ChooseLocation extends StatefulWidget {
 
 class _ChooseLocationState extends State<ChooseLocation> {
   List<WorldTime> locations = [
+    //Accra
     WorldTime(
         location: 'Accra',
         time: 'time',
         flag: 'gh.jpg',
         isDaytime: 'isDaytime',
         url: 'Africa/Accra'),
+    // Lagos
     WorldTime(
         location: 'Lagos',
         time: 'time',
         flag: 'ng.jpg',
         isDaytime: 'isDaytime',
         url: 'Africa/Lagos'),
+    // Cairo
     WorldTime(
         location: 'Cairo',
         time: 'time',
         flag: 'egypt.jpg',
         isDaytime: 'isDaytime',
         url: 'Africa/Cairo'),
-    // WorldTime(
-    //     location: 'Abuja',
-    //     time: 'time',
-    //     flag: 'us.jpg',
-    //     isDaytime: 'isDaytime',
-    //     url: 'Africa/Abuja'),
+    // Maputo
+    WorldTime(
+        location: 'Maputo',
+        time: 'time',
+        flag: 'Mozambique.jpg',
+        isDaytime: 'isDaytime',
+        url: 'Africa/Maputo'),
+    //Monrovia
+    WorldTime(
+        location: 'Monrovia',
+        time: 'time',
+        flag: 'liberia.jpg',
+        isDaytime: 'isDaytime',
+        url: 'Africa/Monrovia'),
+    // Nairobi
+    WorldTime(
+        location: 'Nairobi',
+        time: 'time',
+        flag: 'us.jpg',
+        isDaytime: 'isDaytime',
+        url: 'Africa/Nairobi'),
+    //Tripoli
+    WorldTime(
+        location: 'Tripoli',
+        time: 'time',
+        flag: 'us.jpg',
+        isDaytime: 'isDaytime',
+        url: 'Africa/Maputo'),
+    //Tunis
+    WorldTime(
+        location: 'Tunis',
+        time: 'time',
+        flag: 'us.jpg',
+        isDaytime: 'isDaytime',
+        url: 'Africa/Tunis'),
+    //Adak
+    WorldTime(
+        location: 'Adak',
+        time: 'time',
+        flag: 'us.jpg',
+        isDaytime: 'isDaytime',
+        url: 'Africa/Adak'),
   ];
 
   void updateTime(index) async {
